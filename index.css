@@ -1,0 +1,398 @@
+*{
+  cursor: url('Imagenes/cursor.png'), auto;
+  
+}
+
+.vertical{
+  display: none;
+}
+ 
+body{
+    background-color: #625BB2;
+    margin: 0;
+    padding: 0;
+    zoom: 75%;
+}
+
+@font-face {
+    font-family: 'Fredoka';
+    src: url('Font/Fredoka-Regular.ttf') format('truetype');
+  }
+
+header{
+    width: 100%;
+    height: 8.5%;
+    position: absolute;
+    background-color: #2D2958;
+}
+
+.icon{
+    width: 3.5em;
+    border-radius: 30%;
+    margin-top: 1.5vh;
+}
+
+.cont_cabecera{
+    width: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    /* alinea verticalmente */
+}
+.cont_cabecera label{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    font-family: "Fredoka", sans-serif;
+    top: 25%;
+    margin-left: 9vh;
+}
+ 
+.instrucciones{
+  position: absolute;
+  right: 3%;
+  top: 15%;
+  width: 8vh;
+  height: 8vh;
+  background-color: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 1px 1px 5px 5px rgba(0,0,0,0.2);
+  -moz-box-shadow: inset 1px 1px 5px 5px rgba(0,0,0,0.2);
+  box-shadow: inset 1px 1px 5px 5px rgba(0,0,0,0.2);
+  cursor: url('Imagenes/cursor-dedo.png'), auto !important;
+ 
+}
+label > b{
+  cursor: url('Imagenes/cursor-dedo.png'), auto !important;
+}
+.instrucciones img{
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+
+.carousel_principal{
+    position: absolute;
+    width: 900px;
+    height: 300px;
+    background-color: #fff;
+    top: 15%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    overflow: hidden;
+    white-space: nowrap;
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    
+}
+.carousel_principal div{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    box-sizing: border-box;
+    
+}
+
+
+.cont_tarjetas{
+    background-color: #fff;
+    position: absolute;
+    width: 70%;
+    height: 35%;
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    -webkit-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    
+}
+
+
+.cards-wrapper {
+    width:100%;
+    height:300px;
+    max-width:1200px;
+    overflow-x:hidden;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: tomato; */
+  }
+  
+  .cards {
+    position:absolute;
+    top:15px;
+    left:50%;
+    transform:translateX(-110px);
+    display:flex;
+    flex-direction:row;
+    width:2100px;
+    justify-content:space-between;
+    /* background-color: tomato; */
+  }
+  
+  .card {
+    /* aqui podemos modificar el tamaño */
+    width:230px;
+    height:200px;
+    border-radius:14px;
+    border:none;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing:0.5px;
+    display:inline;
+    box-sizing:border-box;
+    color:#000;
+    cursor: url('Imagenes/cursor-dedo.png'), auto !important;
+  }
+  
+  button{
+    width: 200px;
+    height: 100px;
+  }
+  
+  .card h4 {
+    position: absolute;
+    /* bottom: 9%; */
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+  }
+  
+  
+  
+  .cards-wrapper::after {
+    content:'';
+    display:block;
+    position:absolute;
+    top:0;
+    width:100%;
+    max-width:1200px;
+    height:100%;
+    pointer-events:none;
+  }
+  
+  
+
+  .arrow-btn {
+    width:60px;
+    height:60px;
+    background:#FFC500;
+    border-radius:30%;
+    border:none;
+    box-shadow: 0 6px 8px #00000030;
+    position:absolute;
+    top:50%;
+    left:20px;
+    transform:translateY(-50%);
+    z-index:1000;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+  }
+  
+  .arrow-btn-next {
+    left:auto;
+    right:20px;
+  }
+  
+  .arrow-btn svg {
+    fill:#fff;
+    position:absolute;
+    height:80%;  
+    left:50%;
+    top:50%;
+    transform:translate(-60%,-50%);
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+  }
+  
+  .arrow-btn-next svg {
+    transform:translate(-40%,-50%);
+  }
+  
+h3,h4{
+    color: #fff;
+}
+
+.card:nth-child(1) {
+    background-color: #4793AF;
+}
+.card:nth-child(2){
+    background-color: #E78895;
+}
+.card:nth-child(3){
+    background-color: #3652AD;
+}
+.card:nth-child(4){
+    background-color: #F45050;
+}
+.card:nth-child(5){
+    background-color: #41B06E;
+}
+.card:nth-child(6){
+    background-color: #86469C;
+}
+.card:nth-child(7){
+    background-color: #D04848;
+}
+.card:nth-child(8){
+    background-color: #FAA300;
+}
+  
+img, h3, h4{
+  cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.aviso{
+  position: fixed;
+  width: 30%;
+  height: 40%;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background-color: #625BB2;
+  border-radius: 50px;
+  border: #fff solid 5px;
+  
+}
+
+.alerta{
+  position: absolute;
+  width: 18%;
+  height: 22%;
+  background-color: #fff;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 40px;
+  border: #fff solid 10px;
+}
+
+.alerta img{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;  
+  bottom: 0;
+  margin: auto;
+  width: 80%;
+}
+
+.salir{
+  position: absolute;
+  width: 35%;
+  height: 14%;
+  bottom: 10%;
+  right: 10%;
+  border-radius: 15px;
+  border: none;
+  font-size: 25px;
+  font-family: "Fredoka", monospace;
+  color: #fff;
+  background-color: #ff5555;
+  cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+.ver{
+  position: absolute;
+  width: 35%;
+  height: 14%;
+  bottom: 10%;
+  left: 10%;
+  border-radius: 15px;
+  border: none;
+  font-size: 25px;
+  font-family: "Fredoka", monospace;
+  color: #fff;
+  background-color: #52b877;
+  cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.aviso p{
+  font-family: "Fredoka", monospace;
+  font-size: 32px;
+  color: #fff;
+  position: absolute;
+  top: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gif{
+  width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-30%);
+  border-radius: 20px;
+}
+
+.sombreado{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.60);
+  z-index: 2;
+}  
+
+path{
+  cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1334px) and (orientation: portrait){
+    .vertical{
+      display: block;
+      background-color: #625BB2;
+      position: absolute;
+      z-index: 3;
+      width: 100%;
+      height: 100%;
+    }
+    .aviso{
+      display: none;
+    }
+    #icono{
+      position: absolute;
+      width: 35vh;
+      left: 50%;
+      transform: translate(-50%);
+      top: 10%;
+    }
+    #gif{
+      position: absolute;
+      top: 65%;
+      width: 22vh;
+      left: 50%;
+      transform: translate(-50%);
+      border-radius: 35px;
+    }
+    label{
+      position: absolute;
+      font-size: 50px;
+      color: #fff;
+      font-family: 'Fredoka';
+      left: 50%;
+      transform: translate(-50%);
+      top: 57%;
+    }
+}

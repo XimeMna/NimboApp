@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="JuegoDePreguntas.css">
+</head> 
+<body>
+    <audio id="correcto" src="Audio/correcto.mp3"></audio>
+    <audio id="incorrecto" src="Audio/incorrecto.mp3"></audio>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <img src="Imagenes/boton.png" class="salir" onclick="salir()">
+    <div class="contenedor">
+
+
+        <div id="pregunta1">
+        <div class="cuadro">
+            <h1>¿Qué es la inteligencia artificial?</h1> 
+            <img src="Imagenes/IA/001-asistente-de-ai.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Un campo de estudio en la biología.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Una rama de la química.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Un campo de la informática.</div>
+        </div>
+
+
+        <div id="pregunta2"> 
+        <div class="cuadro">
+            <h1>¿Cuáles son los dos tipos principales de inteligencia artificial?</h1>
+            <img src="Imagenes/IA/002-asistente-de-ai-1.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; IA rápida e IA lenta.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; IA débil e IA fuerte.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; IA pequeña e IA grande.</div>
+        </div>
+
+
+        <div id="pregunta3"> 
+        <div class="cuadro">
+            <h1>¿Cuáles son algunos ejemplos de inteligencia artificial?</h1>
+            <img src="Imagenes/IA/003-inteligencia-artificial.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Redes sociales y videojuegos.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Recetas de cocina y tácticas de fútbol.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Siri de Apple, Google Assistant y Amazon Alexa</div>
+        </div>
+
+
+        <div id="pregunta4"> 
+        <div class="cuadro">
+            <h1>¿Cuáles son algunas aplicaciones de la inteligencia artificial?</h1>
+            <img src="Imagenes/IA/004-chip.png">
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Reconocimiento facial y diagnóstico médico asistido por ordenador.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Producción de música y arte.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Control de tráfico aéreo y agricultura.</div>
+        </div>
+
+
+        <div id="pregunta5"> 
+        <div class="cuadro">
+            <h1>¿Cuáles son algunas consideraciones éticas importantes en la inteligencia artificial?</h1>
+            <img src="Imagenes/IA/005-inteligencia-artificial-1.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Valores religiosos y normas sociales.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Política y economía.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Sesgo algorítmico, privacidad y seguridad de datos.</div>
+        </div>
+
+
+        <div id="pregunta6"> 
+        <div class="cuadro">
+            <h1>¿Qué es una red neuronal artificial y cómo se utiliza en inteligencia artificial?</h1>
+            <img src="Imagenes/IA/006-inteligencia-artificial-2.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Un tipo de red de pesca utilizada en la pesca submarina.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Un modelo computacional inspirado en el funcionamiento del cerebro humano.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Una técnica de tejido neuronal utilizada en cirugías cerebrales.</div>
+        </div>
+
+
+        <div id="pregunta7"> 
+        <div class="cuadro">
+            <h1>¿Cuál es un ejemplo de inteligencia artificial en el campo de los videojuegos?</h1>
+            <img src="Imagenes/IA/007-apreton-de-manos.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Juegos de mesa como el ajedrez.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Generación automática de jugadores NPC.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Uso de dados y cartas.</div>
+        </div>
+
+
+        <div id="pregunta8"> 
+        <div class="cuadro">
+            <h1>¿Cómo puede ayudar la inteligencia artificial en la conservación del medio ambiente?</h1>
+            <img src="Imagenes/IA/008-inteligencia-artificial-3.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; No tiene aplicación en este campo.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Ayudando a la creación de basura electrónica.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; La protección de especies en peligro de extinción, gestión de recursos naturales.</div>
+        </div>
+
+    </div>
+
+    <script>
+        var preguntas = [];
+        var numeroDePreguntas = 8; 
+        for (var i = 1; i <= numeroDePreguntas; i++) {
+            preguntas.push(document.getElementById("pregunta" + i));
+        }
+        var pregunta = 0;
+        var Puntos = 0;
+        var audioCorrecto = document.getElementById("correcto");
+        var audioIncorrecto = document.getElementById("incorrecto");
+        var click = document.getElementById("click");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            SiguientePregunta();
+            agregarEventos();
+        });
+
+        function SiguientePregunta(){
+            pregunta++;
+
+            ocultarTodasLasPreguntas();
+
+            switch(pregunta){
+                case 1:
+                    Pregunta1();
+                    break;
+                case 2:
+                    Pregunta2();
+                    break;
+                case 3:
+                    Pregunta3();
+                    break;
+                case 4:
+                    Pregunta4();
+                    break;
+                case 5:
+                    Pregunta5();
+                    break;
+                case 6:
+                    Pregunta6();
+                    break;
+                case 7:
+                    Pregunta7();
+                    break;
+                case 8:
+                    Pregunta8();
+                    break;
+                default:
+                    window.location.href = `FinalDeJuego1.html?Puntos=${encodeURIComponent(Puntos)}`;
+                    break;
+            } 
+        }
+
+        function Comprobar(evento) {
+            var Seleccionado = this;
+            var opciones = Seleccionado.parentElement.querySelectorAll('.opciones');
+
+            opciones.forEach(function(opcion) {
+                if (opcion === Seleccionado) {
+                    if (opcion.classList.contains('correcta')) {
+                        Puntos++;
+                        audioCorrecto.play();
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#40a565";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("bien");
+                    } else {
+                        audioIncorrecto.play();
+                        var CorrectaElement = opcion.parentElement.querySelector('.correcta');
+                        CorrectaElement.style.backgroundColor = "#40a565";
+                        CorrectaElement.style.color = "#fff";
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#ff4a4a";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("mal");
+                    }
+                }
+            });
+
+            opciones.forEach(function(opcion) {
+                opcion.removeEventListener("click", Comprobar);
+            });
+
+            setTimeout(SiguientePregunta, 2000);
+        }
+
+        var opciones = document.querySelectorAll('.opciones');
+        opciones.forEach(function(opcion) {
+            opcion.addEventListener("click", Comprobar);
+        });
+
+
+        function ocultarTodasLasPreguntas() {
+            for (var i = 1; i <= 8; i++) {
+                var pregunta = document.getElementById("pregunta" + i);
+                pregunta.style.display = "none";
+            }
+        }
+
+        function Pregunta1(){
+            pregunta1.style.display = "block";
+            Correcta = "opc3";
+        }
+
+        function Pregunta2(){
+            pregunta2.style.display = "block";
+        }
+        function Pregunta3(){
+            pregunta3.style.display = "block";
+        }
+        function Pregunta4(){
+            pregunta4.style.display = "block";
+        }
+        function Pregunta5(){
+            pregunta5.style.display = "block";
+        }
+        function Pregunta6(){
+            pregunta6.style.display = "block";
+        }
+        function Pregunta7(){
+            pregunta7.style.display = "block";
+        }
+        function Pregunta8(){
+            pregunta8.style.display = "block";
+        }
+
+        function salir(){
+            click.play();
+            var Opcion = 1;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        }
+    </script>
+</body>
+</html>

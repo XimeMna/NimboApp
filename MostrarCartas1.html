@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>¿Qué es la Inteligencia Artificial?</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/001-asistente-de-ai.png">
+                    <h1>La inteligencia artificial es el campo de la informática que se centra en el desarrollo de sistemas capaces
+                         de realizar tareas que normalmente requerirían inteligencia humana.</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>¿Cuáles son los dos tipos principales de IA?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/002-asistente-de-ai-1.png">
+                    <h1>Débil y Fuerte: La débil se enfoca en tareas específicas sin tener conciencia ni aprender por sí misma, la fuerte intenta imitar la inteligencia humana.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>¿Cuáles son algunos ejemplos de IA?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/003-inteligencia-artificial.png">
+                    <h1>Asistentes de voz como Siri de Apple, Google Assistant y Amazon Alexa. </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>¿Cuáles son algunas aplicaciones prácticas de IA?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/004-chip.png">
+                    <h1> Reconocimiento facial, procesamiento de lenguaje natural, conducción autónoma, sistemas de recomendación y diagnóstico médico asistido por ordenador. </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>¿Cuáles son algunas consideraciones éticas importantes en IA?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/005-inteligencia-artificial-1.png">
+                    <h1>Sesgo algorítmico, privacidad y seguridad de datos, responsabilidad y transparencia en el desarrollo de sistemas de IA. </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>¿Qué es una red neuronal artificial y cómo se utiliza en IA?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/006-inteligencia-artificial-2.png">
+                    <h1>Una red neuronal artificial es un modelo computacional inspirado en el funcionamiento del cerebro humano.  
+                        Se utiliza para reconocer patrones en datos, para realizar tareas y generar contenido.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>¿Cuál es un ejemplo de aplicación de IA en el campo de los videojuegos?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/007-apreton-de-manos.png">
+                    <h1>Un ejemplo es la creación de personajes no jugadores (NPCs) que pueden adaptarse al comportamiento del jugador y 
+                        tomar decisiones en tiempo real.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>¿Cómo puede ayudar la IA en la conservación del medio ambiente?</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/IA/008-inteligencia-artificial-3.png">
+                    <h1>La IA puede ayudar en la monitorización y protección de especies en peligro de extinción, 
+                        la gestión sostenible de recursos naturales, la predicción y mitigación de desastres naturales.</h1>
+                </div>
+            </div>
+        </div>
+         
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 1;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 8; 
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

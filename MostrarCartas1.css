@@ -1,0 +1,218 @@
+*{
+    cursor: url('Imagenes/cursor.png'), auto;
+}
+ 
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Fredoka", sans-serif;
+    background-color: #2D2958;
+}
+ 
+@font-face {
+    font-family: 'Fredoka';
+    src: url('Font/Fredoka-Regular.ttf') format('truetype');
+}
+
+.contenedor{
+    background-color: #625BB2;
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+    -webkit-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+}
+
+.salir{
+    position: absolute;
+    z-index: 1;
+    width: 7vh;
+    top: 1em;
+    left: 1em;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.numero{
+    position: absolute;
+    background-color: #FFC500;
+    width: 7vh;
+    height: 7vh;
+    right: 2%;
+    top: 2%;
+    border-radius: 10px;
+    color: #fff;
+    -webkit-box-shadow: inset 1px 1px 3px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 3px 5px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 3px 5px rgba(0,0,0,0.2);
+}
+
+#numero_tarjeta{
+    font-size: 25px;
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+
+}
+
+.cuadro{
+    position: absolute;
+    width: 50vh;
+    height: 50vh; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 30px;
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);  
+    background-color: #fff;
+}
+
+.boton_girar{
+    position: absolute;
+    width: 35vh;
+    height: 11vh; 
+    top: 74%;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+    background-color: #2D2958;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);  
+}
+
+.boton_girar h1{
+    position: absolute;
+    margin: 0;
+    color: #fff;
+    font-size: 35px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    /* ponerlo invisible y que no interfiera en el div */
+}
+
+.flechas{
+    width: 70%;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+ 
+.retroceder{
+    position: absolute;
+    width: 10vh;
+    height: 10vh; 
+    background-color: #fff;
+    top: 72%;
+    left: 20%;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+.avanzar{
+    position: absolute;
+    width: 10vh;
+    height: 10vh; 
+    background-color: #fff;
+    top: 72%;
+    right: 20%;
+    border-radius: 20px;
+    /* debe de llevar esto el contenedor solamente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.retroceder,.avanzar{
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);  
+}
+
+.tarjetas{
+    position: absolute;
+    width: 50vh;
+    height: 50vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-75%);
+}
+
+.cartas{
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1.0s;
+}
+
+
+.adelante{
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    -webkit-box-shadow: 30px 30px 30px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 30px 30px 30px -10px rgba(54,54,54,0.79);
+    box-shadow: 30px 30px 30px -10px rgba(54,54,54,0.79);
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    text-align: center;
+}
+.atras{
+    transform: rotateY(180deg);
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 30px;
+    -webkit-box-shadow: 30px 30px 30px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 30px 30px 30px -10px rgba(54,54,54,0.79);
+    box-shadow: 30px 30px 30px -10px rgba(54,54,54,0.79);
+    position: absolute;
+    backface-visibility: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width: 800px) and (max-width: 1334px) and (orientation: landscape){
+    .tarjetas{
+        width: 45vh;
+        height: 45vh;
+        font-size: 25px;
+    }
+}
+
+.adelante h1{
+    font-size: 25px;
+    line-height: 1.5;
+}
+.atras h1{
+    position: absolute;
+    font-weight: normal;
+    font-size: 20px;
+    bottom: 10%;
+    width: 90%;
+}
+.atras img{
+    position: absolute;
+    top: 12%;
+    width: 25%;
+}

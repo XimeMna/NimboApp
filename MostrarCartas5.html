@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Neurociencia Cognitiva</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/001-cerebro.png">
+                    <h1>Campo interdisciplinario que estudia la relación entre la mente, el cerebro y la cognición, utilizando métodos de la neurociencia y la psicología cognitiva.</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Corteza Cerebral</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/002-inteligencia-emocional.png">
+                    <h1> Capa externa del cerebro compuesta por surcos y circunvoluciones, donde se llevan a cabo funciones cognitivas superiores como el pensamiento.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Atención Selectiva</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/003-cerebro-1.png">
+                    <h1>Capacidad para concentrarse en una tarea o estímulo específico mientras se ignoran otros estímulos irrelevantes.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Imágenes por Resonancia Magnética Funcional</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/004-intestino.png">
+                    <h1>Técnica de neuroimagen que permite medir la actividad cerebral al detectar cambios en el flujo sanguíneo relacionados con la función cerebral.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Esquizofrenia</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/005-cerebro-2.png">
+                    <h1>Trastorno psiquiátrico caracterizado por alteraciones en la percepción, el pensamiento y la conducta, posiblemente relacionado con disfunciones en la comunicación neuronal.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Plasticidad Cerebral</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/006-cerebro-3.png">
+                    <h1>Capacidad del cerebro para reorganizarse estructural y funcionalmente en respuesta a la experiencia y al aprendizaje a lo largo de la vida.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Michael Gazzaniga</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/007-liderazgo-intelectual.png">
+                    <h1>Neurocientífico conocido por sus investigaciones sobre la lateralización cerebral y las funciones cognitivas del hemisferio cerebral izquierdo y derecho.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Electroencefalografía </h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Neurociencia/008-inteligencia-artificial.png">
+                    <h1>Técnica de neuroimagen que registra la actividad eléctrica del cerebro mediante electrodos colocados en el cuero cabelludo, utilizada para estudiar la actividad cerebral en tiempo real.</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 5;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 8;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

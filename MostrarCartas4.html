@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <style>
+        .atras img{
+            top: 15%;
+        }
+        
+    </style>
+
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Tipo de Reacción: Síntesis</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/001-reaccion-quimica-1.png">
+                    <h1>Dos o más sustancias se combinan para formar un compuesto más complejo.<br><br>2H<sub>2</sub> + O<sub>2</sub> → 2H<sub>2</sub>O</h1>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Tipo de Reacción: Descomposición</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/002-quimico.png">
+                    <h1>Un compuesto se descompone en dos o más sustancias más simples.<br><br>2H<sub>2</sub>O → 2H<sub>2</sub> + O<sub>2</sub></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Tipo de Reacción: Sustitución</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/003-tubo-de-ensayo.png">
+                    <h1>Un átomo o grupo de átomos de una sustancia es reemplazado por otro átomo o grupo de átomos.<br><br>2KCl + H<sub>2</sub>SO<sub>4</sub> → K<sub>2</sub>SO<sub>4</sub> + 2HCl</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Tipo de Reacción: Doble Sustitución</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/004-quimico-1.png">
+                    <h1>Los cationes y aniones de dos compuestos se intercambian entre sí para formar dos nuevos compuestos.<br><br>NaCl + AgNO<sub>3</sub> → NaNO<sub>3</sub> + AgCl</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Tipo de Reacción: Neutralización</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/005-reaccion-quimica.png">
+                    <h1> Reacción entre un ácido y una base que forma agua y una sal.<br><br>HCl + NaOH → NaCl + H<sub>2</sub>O</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Tipo de Reacción: Redox </h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/006-atomo.png">
+                    <h1>Transferencia de electrones entre reactivos, donde uno se oxida (pierde electrones) y otro se reduce (gana electrones).<br>2Mg + O<sub>2</sub> → 2MgO<br></h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Ácido Clorhídrico</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/007-atomo-1.png">
+                    <h1>Ácido fuerte, corrosivo y soluble en agua. Se encuentra en el estómago humano y se utiliza en la industria química.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Sulfato de Cobre</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/008-atomo-2.png">
+                    <h1>Sal inorgánica de color azul utilizada en aplicaciones químicas y como fungicida.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta9" style="display: none;">
+            <div class="cartas" id="cartas9"> 
+                <div class="adelante">
+                    <h1>Dióxido de Carbono</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/009-reaccion-quimica.png">
+                    <h1>Gas incoloro, denso y no inflamable. Se produce en la respiración celular y en la combustión completa de carbono.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta10" style="display: none;">
+            <div class="cartas" id="cartas10"> 
+                <div class="adelante">
+                    <h1>Sulfato de Sodio</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/010-quimico-2.png">
+                    <h1>Sal inorgánica sólida, soluble en agua, utilizada en la fabricación de vidrio, papel y detergentes.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta11" style="display: none;">
+            <div class="cartas" id="cartas11"> 
+                <div class="adelante">
+                    <h1>Estequiometría</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/011-reaccion-quimica-2.png">
+                    <h1>Rama de la química que estudia las relaciones cuantitativas entre los reactivos y productos en las reacciones químicas.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta12" style="display: none;">
+            <div class="cartas" id="cartas12"> 
+                <div class="adelante">
+                    <h1>Catalizador</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Reacciones/012-laboratorio.png">
+                    <h1>Sustancia que aumenta la velocidad de una reacción química sin ser consumida en la reacción.</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 4;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 12;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="JuegoDePreguntas.css">
+</head> 
+<body>
+    <audio id="correcto" src="Audio/correcto.mp3"></audio>
+    <audio id="incorrecto" src="Audio/incorrecto.mp3"></audio>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <img src="Imagenes/boton.png" class="salir" onclick="salir()">
+    <div class="contenedor">
+
+
+        <div id="pregunta1">
+        <div class="cuadro">
+            <h1>¿Qué es la programación orientada a objetos?</h1> 
+            <img src="Imagenes/POO/001-desarrollo-web.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp;Un paradigma de programación basado en acciones y lógica.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp;Un paradigma de programación que organiza el software alrededor de objetos y datos.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;Un lenguaje de programación específico.</div>
+        </div>
+
+
+        <div id="pregunta2"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/002-clave.png">
+            <h1>¿Qué es una clase en POO?</h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp;Una instancia de un objeto.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp;Un método de una clase.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp;Una plantilla para crear objetos que define propiedades y métodos comunes.</div>
+        </div>
+
+
+        <div id="pregunta3"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/003-diagrama-de-flujo.png">
+            <h1>¿Qué es un objeto en POO?</h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp;Un método especial de una clase.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp;Una instancia concreta de una clase que tiene atributos y métodos específicos.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;Una instrucción de programación.</div>
+        </div>
+
+
+        <div id="pregunta4"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/004-programacion-3d.png">
+            <h1>¿Qué es la encapsulación en POO?</h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp;Mostrar el estado interno de un objeto.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp;Ocultar el estado interno de un objeto y permitir el acceso solo a través de métodos.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;Permitir el acceso directo a los atributos de un objeto.</div>
+        </div>
+
+
+        <div id="pregunta5"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/005-programacion.png">
+            <h1>¿Qué es la herencia en POO?</h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp;Una característica de la abstracción.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp;Un mecanismo que permite que una clase herede atributos y métodos de otra clase.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;Un método especial de una clase.</div>
+        </div>
+
+
+        <div id="pregunta6"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/006-programacion-1.png">
+            <h1>¿Qué es el polimorfismo en POO?</h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp;La capacidad de ocultar el estado interno de un objeto.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp;La capacidad de objetos de diferentes clases de responder al mismo mensaje con comportamientos específicos.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;La capacidad de crear una instancia de un objeto.</div>
+        </div>
+
+
+        <div id="pregunta7"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/007-programacion-2.png">
+            <h1>¿Qué es la abstracción en POO?</h1>
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp;Un proceso de identificar las características esenciales de un objeto y eliminar los detalles irrelevantes.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp;Un mecanismo que permite que una clase herede atributos y métodos de otra clase.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;Una instancia concreta de una clase que tiene atributos y métodos específicos.</div>
+        </div>
+
+
+        <div id="pregunta8"> 
+        <div class="cuadro">
+            <img src="Imagenes/POO/008-navegador.png">
+            <h1>¿Qué es un método constructor en POO?</h1>
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp;Un método especial que se llama automáticamente al crear un nuevo objeto.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp;Un método de una clase que se utiliza para definir el comportamiento de un objeto.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp;Un método que oculta el estado interno de un objeto.</div>
+        </div>
+
+    </div>
+
+    <script>
+        var preguntas = [];
+        var numeroDePreguntas = 8; 
+        for (var i = 1; i <= numeroDePreguntas; i++) {
+            preguntas.push(document.getElementById("pregunta" + i));
+        }
+        var pregunta = 0;
+        var Puntos = 0;
+        var audioCorrecto = document.getElementById("correcto");
+        var audioIncorrecto = document.getElementById("incorrecto");
+        var click = document.getElementById("click");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            SiguientePregunta();
+            agregarEventos();
+        });
+
+        function SiguientePregunta(){
+            pregunta++;
+
+            ocultarTodasLasPreguntas();
+
+            switch(pregunta){
+                case 1:
+                    Pregunta1();
+                    break;
+                case 2:
+                    Pregunta2();
+                    break;
+                case 3:
+                    Pregunta3();
+                    break;
+                case 4:
+                    Pregunta4();
+                    break;
+                case 5:
+                    Pregunta5();
+                    break;
+                case 6:
+                    Pregunta6();
+                    break;
+                case 7:
+                    Pregunta7();
+                    break;
+                case 8:
+                    Pregunta8();
+                    break;
+                default:
+                    window.location.href = `FinalDeJuego3.html?Puntos=${encodeURIComponent(Puntos)}`;
+                    break;
+            } 
+        }
+
+        function Comprobar(evento) {
+            var Seleccionado = this;
+            var opciones = Seleccionado.parentElement.querySelectorAll('.opciones');
+
+            opciones.forEach(function(opcion) {
+                if (opcion === Seleccionado) {
+                    if (opcion.classList.contains('correcta')) {
+                        Puntos++;
+                        audioCorrecto.play();
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#40a565";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("bien");
+                    } else {
+                        audioIncorrecto.play();
+                        var CorrectaElement = opcion.parentElement.querySelector('.correcta');
+                        CorrectaElement.style.backgroundColor = "#40a565";
+                        CorrectaElement.style.color = "#fff";
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#ff4a4a";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("mal");
+                    }
+                }
+            });
+
+            opciones.forEach(function(opcion) {
+                opcion.removeEventListener("click", Comprobar);
+            });
+
+            setTimeout(SiguientePregunta, 2000);
+        }
+
+        var opciones = document.querySelectorAll('.opciones');
+        opciones.forEach(function(opcion) {
+            opcion.addEventListener("click", Comprobar);
+        });
+
+
+        function ocultarTodasLasPreguntas() {
+            for (var i = 1; i <= 8; i++) {
+                var pregunta = document.getElementById("pregunta" + i);
+                pregunta.style.display = "none";
+            }
+        }
+
+        function Pregunta1(){
+            pregunta1.style.display = "block";
+        }
+
+        function Pregunta2(){
+            pregunta2.style.display = "block";
+        }
+        function Pregunta3(){
+            pregunta3.style.display = "block";
+        }
+        function Pregunta4(){
+            pregunta4.style.display = "block";
+        }
+        function Pregunta5(){
+            pregunta5.style.display = "block";
+        }
+        function Pregunta6(){
+            pregunta6.style.display = "block";
+        }
+        function Pregunta7(){
+            pregunta7.style.display = "block";
+        }
+        function Pregunta8(){
+            pregunta8.style.display = "block";
+        }
+
+        function salir(){
+            click.play();
+            var Opcion = 3;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+    </script>
+</body>
+</html>

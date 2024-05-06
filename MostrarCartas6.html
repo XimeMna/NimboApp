@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <style>
+        .atras img{
+            top: 20%;
+        }
+    </style>
+
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Microbiología</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/001-microbiologia.png">
+                    <h1>Campo de la biología que estudia los microorganismos, incluyendo bacterias, virus, hongos.</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Bacteria</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/002-microbiologia-1.png">
+                    <h1>Organismo unicelular procariota que puede encontrarse en una variedad de entornos, desde suelos hasta cuerpos humanos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Virus</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/003-ogm.png">
+                    <h1>Entidad acelular compuesta por material genético encapsulado, puede causar una amplia gama de enfermedades en humanos, animales y plantas.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Hongos</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/004-microbio.png">
+                    <h1>Organismos eucariotas unicelulares o multicelulares que pueden ser beneficiosos o patógenos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Protozoo</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/005-prueba-microbiologica.png">
+                    <h1>Organismo eucariota unicelular que se encuentra principalmente en ambientes acuáticos, desempeñando un papel importante en los ciclos biogeoquímicos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Tinción de Gram</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/006-proteccion.png">
+                    <h1>Método de tinción diferencial utilizado para distinguir entre dos grandes grupos de bacterias según la composición de su pared celular.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Escherichia coli</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/007-ameba.png">
+                    <h1>Bacteria Gram-negativa comúnmente encontrada en el intestino humano que puede causar infecciones urinarias, gastrointestinales y otras enfermedades.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Tuberculosis</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/008-arn.png">
+                    <h1>Enfermedad infecciosa causada por la bacteria Mycobacterium tuberculosis, que afecta principalmente a los pulmones pero también puede afectar otros órganos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta9" style="display: none;">
+            <div class="cartas" id="cartas9"> 
+                <div class="adelante">
+                    <h1>Penicilina</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Microbiologia/009-leucocito.png">
+                    <h1>Primer antibiótico descubierto por Alexander Fleming en 1928 y se utiliza ampliamente en el tratamiento de infecciones bacterianas.</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 6;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 9;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

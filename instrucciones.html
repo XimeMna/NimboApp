@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="instrucciones.css">
+</head>
+<body> 
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <header> 
+        <div class="cont_cabecera">
+            <a href="index.html">
+            <img src="Imagenes/icon.jpg" class="icon">
+            <label><b>Nimbo</b></label>
+            </a>
+            <div class="instrucciones">
+              <img src="Imagenes/libro-de-instrucciones.png">
+            </div>
+        </div>
+    </header>
+
+    <img onclick="entendido()" src="Imagenes/boton.png" class="salir">
+    <div class="contenedor">
+
+        <div id="principal">
+            <label class="titulo"><strong>Selecciona tu tema favorito...&nbsp;Dale un Click</strong></label>
+            <img class="img_inicio" src="Imagenes/Inicio.png">
+            <label class="titulo2"><strong>Mueve los temas:</strong></label>
+            <div class="laptop">
+                <label>Portatil: Click en los botones</label>
+                <img src="Imagenes/seleccionar.gif">    
+            </div>
+            <div class="tablet">
+                <label>Tablet: Deslizando con el dedo</label>
+                <img src="Imagenes/golpe-fuerte.gif">
+            </div>
+            <div class="siguiente" onclick="sig()"><b>Siguiente</b></div>
+        </div>
+
+        
+
+
+        <div id="iniciocartas">
+            
+            <img src="Imagenes/N_Tarjetas.png" class="img_nTarjetas"><img src="Imagenes/derecho.png" class="flecha1">
+            <h1 class="uno">Número de Cantidad de Cartas</h1>
+
+            <img src="Imagenes/Jugar.png" class="img_jugar"><img src="Imagenes/derecho.png" class="flecha2">
+            <h1 class="dos">Botón para empezar el Juego de Preguntas</h1>
+            
+            <img src="Imagenes/Aprender.png" class="img_aprender"><img src="Imagenes/derecho.png" class="flecha3">
+            <h1 class="tres">Botón para empezar a ver las Tarjetas</h1>
+
+            <img src="Imagenes/Dificultad.png" class="img_dificultad"><img src="Imagenes/derecho.png" class="flecha4">
+            <h1 class="cuatro">Dificultad:</h1>
+            <img src="Imagenes/dificil.png" class="dificil">
+            <h2 class="d">Dificil</h2>
+            <img src="Imagenes/media.png" class="media">
+            <h2 class="m">Media</h2>
+            <img src="Imagenes/facil.png" class="facil">
+            <h2 class="f">Facil</h2>
+
+
+            <div class="entendido" onclick="entendido()"><b>Entendido</b></div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        var click = document.getElementById("click");
+        function sig() {
+            click.play();
+            var principal = document.getElementById("principal");
+            var iniciocartas = document.getElementById("iniciocartas");
+
+            principal.classList.add("animacion");
+            iniciocartas.classList.add("animacion");
+            principal.style.opacity = "0";
+            iniciocartas.style.opacity = "1";
+
+            setTimeout(function() {
+                principal.style.display = "none";
+                iniciocartas.style.display = "block";
+            }, 500); 
+        }
+        function entendido(){
+            click.play();
+            window.location.href = "index.html";
+        }
+
+    </script>
+</body>
+</html>

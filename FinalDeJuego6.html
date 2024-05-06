@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="FinalDeJuego.css">
+</head>
+<body onload="audio()">
+    <audio id="Audio" src="Audio/final.mp3"></audio>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <div class="contenedor">
+        <h1>OBTUVISTE</h1>
+        <div id="puntaje"></div>
+        <p id="frase"></p>
+        <a onclick="clickaudio('JuegoDePreguntas1.html')"><div class="volver_a_jugar">Volver a Jugar</div></a>
+        <a onclick="clickaudio('index.html')"><div class="salir">Salir</div></a>
+    </div>
+    <img src="Imagenes/trofeo.png" class="trofeo1">
+    <img src="Imagenes/trofeo.png" class="trofeo2">
+
+
+    <script>
+         function clickaudio(url){
+            var click = document.getElementById("click");
+            click.play();
+            click.onended = function() {
+                window.location.href = url;
+            };
+        }
+        function audio(){
+            var audio = document.getElementById("Audio");
+            audio.play();
+        }
+        const urlParams = new URLSearchParams(window.location.search);
+        const Puntos = parseInt(urlParams.get('Puntos'));
+        var Calificacion = document.getElementById("puntaje");
+
+        Calificacion.textContent = Puntos + " / 9";
+
+
+        if (Puntos <= 5){
+            perder();
+        }
+        else{
+            ganar();
+        }
+
+
+
+        function ganar(){
+        var frases = [
+            "¡Excelente desempeño! ¡Estás en fuego!",
+            "¡Felicidades! ¡Lo has hecho genial!",
+            "¡Fantástico trabajo! ¡Es impresionate!",
+        ];
+        var indice = Math.floor(Math.random() * frases.length);
+        var frase = frases[indice];
+        document.getElementById("frase").textContent = frase;
+        }
+
+
+
+        function perder(){
+        var frases = [
+            "¡Ánimo! La próxima vez lo harás aún mejor.",
+            "La derrota es solo temporal. ¡Sigue intentándolo!",
+            "La perseverancia es la clave del éxito. ¡Sigue adelante!",
+        ];
+        var indice = Math.floor(Math.random() * frases.length);
+        var frase = frases[indice];
+        document.getElementById("frase").textContent = frase;
+        }
+    </script>
+</body>
+</html>

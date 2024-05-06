@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<head>   
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body> 
+  <audio id="click" src="Audio/click.mp3"></audio>
+  <div class="vertical">
+    <img src="Imagenes/icon.jpg" id="icono">
+    <label>Voltea tu tablet</label>
+    <img src="Imagenes/pantalla-tactil.gif" id="gif">
+  </div>
+    <header> 
+        <div class="cont_cabecera">
+            <img src="Imagenes/icon.jpg" class="icon">
+            <label><b>Nimbo</b></label>
+            <a onclick="sonido()" href="instrucciones.html">
+            <div class="instrucciones">
+              <img src="Imagenes/libro-de-instrucciones.png">
+            </div>
+            </a>
+        </div>
+    </header>
+
+    <div class="aviso" id="aviso" >
+      <div class="alerta">
+          <img src="Imagenes/signo-de-exclamacion.png">
+      </div>
+      <p>¿Ver instrucciones?</p>
+      <img src="Imagenes/libro-de-instrucciones.gif" class="gif">
+      <button class="ver" onclick="instrucciones()">Ver</button>
+      <button class="salir"  onclick="aceptar()">Salir</button>
+    </div>
+    <div class="sombreado" id="capa"></div>
+
+
+    <div class="carousel_principal">
+        <div class="fotos" style="background-image: url('Imagenes/1.png');"></div>
+        <div class="fotos" style="background-image: url('Imagenes/2.png');"></div>
+        <div class="fotos" style="background-image: url('Imagenes/3.png');"></div>
+        <div class="fotos" style="background-image: url('Imagenes/4.png');"></div>
+    </div>
+
+
+    </div>
+
+    <div class="cont_tarjetas">
+        <div class='cards-wrapper'>
+            <div class='cards'>
+              
+              
+              <button class='card card1' onclick="SeleccionarTema()">
+               <img src="Imagenes/inteligencia-artificial.png">
+                <h4>Inteligencia Artificial</h4>
+                <h3>Tecnología</h3>
+              </button>
+              
+    
+              <button class='card card1'>
+               <img src="Imagenes/camping.png">
+                <h4>Objetos en Inglés</h4>
+                <h3>Idiomas</h3>
+              </button>
+    
+    
+              <button class='card card1'>
+               <img src="Imagenes/datos.png">
+                <h4>POO</h4>
+                <h3>Programación</h3>
+              </button>
+    
+    
+              <button class='card card1'>
+               <img src="Imagenes/ciencia.png">
+                <h4>Reacciones Quimicas</h4>
+                <h3>Química</h3>
+              </button>
+    
+    
+              <button class='card card1'>
+               <img src="Imagenes/cerebro-humano.png">
+                <h4>Neurociencia Cognitiva</h4>
+                <h3>Ciencia</h3>
+              </button>
+    
+    
+              <button class='card card1'>
+               <img src="Imagenes/microbiologia.png">
+                <h4>Microbiología</h4>
+                <h3>Biología</h3>
+              </button>
+    
+    
+              <button class='card card1'>
+               <img src="Imagenes/html.png">
+                <h4>Estructura HTML</h4>
+                <h3>Programación</h3>
+              </button>
+    
+    
+              <button class='card card1'>
+               <img src="Imagenes/enlace-quimico.png">
+                <h4>Enlaces Quimicos</h4>
+                <h3>Química</h3>
+              </button>
+          
+              
+          
+            </div>
+            <button class="arrow-btn arrow-btn-prev" tabindex="0">
+              <svg viewBox="0 0 256 512">
+                <path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z" />
+              </svg>
+            </button>
+            <button class="arrow-btn arrow-btn-next" tabindex="0">
+              <svg viewBox="0 0 256 512">
+                <path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+              </svg>
+            </button>
+          </div>
+    
+    
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+          
+    
+    </div>
+
+     
+    <script src="index.js"></script>
+    
+</body>
+</html>

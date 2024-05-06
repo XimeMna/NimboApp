@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="JuegoDePreguntas.css">
+</head> 
+<body>
+    <audio id="correcto" src="Audio/correcto.mp3"></audio>
+    <audio id="incorrecto" src="Audio/incorrecto.mp3"></audio>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <img src="Imagenes/boton.png" class="salir" onclick="salir()">
+    <div class="contenedor">
+
+
+        <div id="pregunta1">
+        <div class="cuadro">
+            <h1>¿Qué tipo de enlace ocurre cuando los átomos transfieren electrones para formar iones?</h1>
+            <img src="Imagenes/Enlaces/001-metano.png"> 
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Iónico</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Covalente</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Metálico</div>
+        </div>
+
+
+        <div id="pregunta2"> 
+        <div class="cuadro">
+            <h1>¿Cuál es la característica principal de los enlaces covalentes?</h1>
+            <img src="Imagenes/Enlaces/002-quimico.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Alta energía de enlace</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Compartición de electrones</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Conductividad eléctrica</div>
+        </div>
+
+
+        <div id="pregunta3"> 
+        <div class="cuadro">
+            <h1>¿Cuál es un ejemplo de enlace metálico?</h1>
+            <img src="Imagenes/Enlaces/003-quimico-1.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Cloruro de sodio</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Molécula de agua</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Cobre</div>
+        </div>
+
+
+        <div id="pregunta4"> 
+        <div class="cuadro">
+            <h1>¿Qué característica del enlace iónico permite su alta energía de enlace?</h1>
+            <img src="Imagenes/Enlaces/004-molecula.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Alta movilidad de electrones</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Compartición de electrones</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Atracción electrostática entre iones</div>
+        </div>
+
+
+        <div id="pregunta5"> 
+        <div class="cuadro">
+            <h1>¿Cuál es un ejemplo de enlace covalente?</h1>
+            <img src="Imagenes/Enlaces/005-molecular.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Cloruro de sodio</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Molécula de agua</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Cobre</div>
+        </div>
+
+
+        <div id="pregunta6"> 
+        <div class="cuadro">
+            <h1>¿Cuál es una característica del enlace metálico?</h1>
+            <img src="Imagenes/Enlaces/006-tetrafluoruro-de-carbono.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Compartición de electrones</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Alta energía de enlace</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Conductividad eléctrica</div>
+        </div>
+
+
+        <div id="pregunta7"> 
+        <div class="cuadro">
+            <h1>¿Qué tipo de enlace se forma cuando los átomos comparten pares de electrones?</h1>
+            <img src="Imagenes/Enlaces/007-metileno.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Iónico</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Covalente</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Metálico</div>
+        </div>
+
+
+        <div id="pregunta8"> 
+        <div class="cuadro">
+            <h1>¿Cuál es un ejemplo de enlace iónico?</h1>
+            <img src="Imagenes/Enlaces/008-estructura.png">
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Cloruro de sodio</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Molécula de agua</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Cobre</div>
+        </div>
+
+        <div id="pregunta9"> 
+        <div class="cuadro">
+            <h1>¿Qué tipo de enlace se produce entre los átomos de metales?</h1>
+            <img src="Imagenes/Enlaces/009-acido-salicilico.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Iónico</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Covalente</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Metálico</div>
+        </div>
+
+    </div>
+
+    <script>
+        var preguntas = [];
+        var numeroDePreguntas = 9; 
+        for (var i = 1; i <= numeroDePreguntas; i++) {
+            preguntas.push(document.getElementById("pregunta" + i));
+        }
+        var pregunta = 0;
+        var Puntos = 0;
+        var audioCorrecto = document.getElementById("correcto");
+        var audioIncorrecto = document.getElementById("incorrecto");
+        var click = document.getElementById("click");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            SiguientePregunta();
+            agregarEventos();
+        });
+
+        function SiguientePregunta(){
+            pregunta++;
+
+            ocultarTodasLasPreguntas();
+
+            switch(pregunta){
+                case 1:
+                    Pregunta1();
+                    break;
+                case 2:
+                    Pregunta2();
+                    break;
+                case 3:
+                    Pregunta3();
+                    break;
+                case 4:
+                    Pregunta4();
+                    break;
+                case 5:
+                    Pregunta5();
+                    break;
+                case 6:
+                    Pregunta6();
+                    break;
+                case 7:
+                    Pregunta7();
+                    break;
+                case 8:
+                    Pregunta8();
+                    break;
+                case 9:
+                    Pregunta9();
+                    break;
+                default:
+                    window.location.href = `FinalDeJuego8.html?Puntos=${encodeURIComponent(Puntos)}`;
+                    break;
+            } 
+        }
+
+        function Comprobar(evento) {
+            var Seleccionado = this;
+            var opciones = Seleccionado.parentElement.querySelectorAll('.opciones');
+
+            opciones.forEach(function(opcion) {
+                if (opcion === Seleccionado) {
+                    if (opcion.classList.contains('correcta')) {
+                        Puntos++;
+                        audioCorrecto.play();
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#40a565";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("bien");
+                    } else {
+                        audioIncorrecto.play();
+                        var CorrectaElement = opcion.parentElement.querySelector('.correcta');
+                        CorrectaElement.style.backgroundColor = "#40a565";
+                        CorrectaElement.style.color = "#fff";
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#ff4a4a";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("mal");
+                    }
+                }
+            });
+
+            opciones.forEach(function(opcion) {
+                opcion.removeEventListener("click", Comprobar);
+            });
+
+            setTimeout(SiguientePregunta, 2000);
+        }
+
+        var opciones = document.querySelectorAll('.opciones');
+        opciones.forEach(function(opcion) {
+            opcion.addEventListener("click", Comprobar);
+        });
+
+
+        function ocultarTodasLasPreguntas() {
+            for (var i = 1; i <= 9; i++) {
+                var pregunta = document.getElementById("pregunta" + i);
+                pregunta.style.display = "none";
+            }
+        }
+
+        function Pregunta1(){
+            pregunta1.style.display = "block";
+        }
+
+        function Pregunta2(){
+            pregunta2.style.display = "block";
+        }
+        function Pregunta3(){
+            pregunta3.style.display = "block";
+        }
+        function Pregunta4(){
+            pregunta4.style.display = "block";
+        }
+        function Pregunta5(){
+            pregunta5.style.display = "block";
+        }
+        function Pregunta6(){
+            pregunta6.style.display = "block";
+        }
+        function Pregunta7(){
+            pregunta7.style.display = "block";
+        }
+        function Pregunta8(){
+            pregunta8.style.display = "block";
+        }
+        function Pregunta9(){
+            pregunta9.style.display = "block";
+        }
+
+        function salir(){
+            click.play();
+            var Opcion = 8;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+    </script>
+</body>
+</html>

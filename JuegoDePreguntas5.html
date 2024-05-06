@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="JuegoDePreguntas.css">
+</head> 
+<body>
+    <audio id="correcto" src="Audio/correcto.mp3"></audio>
+    <audio id="incorrecto" src="Audio/incorrecto.mp3"></audio>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <img src="Imagenes/boton.png" class="salir" onclick="salir()">
+    <div class="contenedor">
+
+
+        <div id="pregunta1">
+        <div class="cuadro">
+            <h1>¿Qué estudia la neurociencia cognitiva?</h1>
+            <img src="Imagenes/Neurociencia/001-cerebro.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; La relación entre el cuerpo y la mente.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; La relación entre la genética y la conducta.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; La relación entre la mente, el cerebro y la cognición.</div>
+        </div>
+
+
+        <div id="pregunta2"> 
+        <div class="cuadro">
+            <h1>¿Cuál es la función principal de la corteza cerebral?</h1>
+            <img src="Imagenes/Neurociencia/002-inteligencia-emocional.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Regular el sistema nervioso autónomo.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Funciones cognitivas superiores como el pensamiento y la memoria.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Procesar emociones y sentimientos.</div>
+        </div>
+
+
+        <div id="pregunta3"> 
+        <div class="cuadro">
+            <h1>¿Qué método se utiliza para medir la actividad cerebral?</h1>
+            <img src="Imagenes/Neurociencia/003-cerebro-1.png">
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Imágenes por Resonancia Magnética Funcional</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Resonancia magnética estructural</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Tomografía computarizada</div>
+        </div>
+
+
+        <div id="pregunta4"> 
+        <div class="cuadro">
+            <h1>¿Cuál es un trastorno relacionado con disfunciones en la comunicación neuronal?</h1>
+            <img src="Imagenes/Neurociencia/004-intestino.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Trastorno bipolar.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Esquizofrenia.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Trastorno de ansiedad generalizada.</div>
+        </div>
+
+
+        <div id="pregunta5"> 
+        <div class="cuadro">
+            <h1>¿Qué teoría describe la capacidad del cerebro para reorganizarse?</h1>
+            <img src="Imagenes/Neurociencia/005-cerebro-2.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Teoría de la evolución.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Teoría del caos.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Plasticidad cerebral.</div>
+        </div>
+
+
+        <div id="pregunta6"> 
+        <div class="cuadro">
+            <h1>¿Quién es conocido por sus investigaciones sobre la lateralización cerebral y hemisferios cerebrales?</h1>
+            <img src="Imagenes/Neurociencia/006-cerebro-3.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Sigmund Freud.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Michael Gazzaniga.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Ivan Pavlov.</div>
+        </div>
+
+
+        <div id="pregunta7"> 
+        <div class="cuadro">
+            <h1>¿Qué método de neuroimagen registra la actividad eléctrica del cerebro?</h1>
+            <img src="Imagenes/Neurociencia/007-liderazgo-intelectual.png">
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Electroencefalografía</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Resonancia magnética funcional</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Tomografía por emisión de positrones</div>
+        </div>
+
+
+        <div id="pregunta8"> 
+        <div class="cuadro">
+            <h1>¿Cuál de las siguientes no es una función de la corteza cerebral?</h1>
+            <img src="Imagenes/Neurociencia/008-inteligencia-artificial.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Procesamiento sensorial.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Controlar los movimientos musculares.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Regular el sistema endocrino.</div>
+        </div>
+
+    </div>
+
+    <script>
+        var preguntas = [];
+        var numeroDePreguntas = 8; 
+        for (var i = 1; i <= numeroDePreguntas; i++) {
+            preguntas.push(document.getElementById("pregunta" + i));
+        }
+        var pregunta = 0;
+        var Puntos = 0;
+        var audioCorrecto = document.getElementById("correcto");
+        var audioIncorrecto = document.getElementById("incorrecto");
+        var click = document.getElementById("click");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            SiguientePregunta();
+            agregarEventos();
+        });
+
+        function SiguientePregunta(){
+            pregunta++;
+
+            ocultarTodasLasPreguntas();
+
+            switch(pregunta){
+                case 1:
+                    Pregunta1();
+                    break;
+                case 2:
+                    Pregunta2();
+                    break;
+                case 3:
+                    Pregunta3();
+                    break;
+                case 4:
+                    Pregunta4();
+                    break;
+                case 5:
+                    Pregunta5();
+                    break;
+                case 6:
+                    Pregunta6();
+                    break;
+                case 7:
+                    Pregunta7();
+                    break;
+                case 8:
+                    Pregunta8();
+                    break;
+                default:
+                    window.location.href = `FinalDeJuego5.html?Puntos=${encodeURIComponent(Puntos)}`;
+                    break;
+            } 
+        }
+
+        function Comprobar(evento) {
+            var Seleccionado = this;
+            var opciones = Seleccionado.parentElement.querySelectorAll('.opciones');
+
+            opciones.forEach(function(opcion) {
+                if (opcion === Seleccionado) {
+                    if (opcion.classList.contains('correcta')) {
+                        Puntos++;
+                        audioCorrecto.play();
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#40a565";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("bien");
+                    } else {
+                        audioIncorrecto.play();
+                        var CorrectaElement = opcion.parentElement.querySelector('.correcta');
+                        CorrectaElement.style.backgroundColor = "#40a565";
+                        CorrectaElement.style.color = "#fff";
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#ff4a4a";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("mal");
+                    }
+                }
+            });
+
+            opciones.forEach(function(opcion) {
+                opcion.removeEventListener("click", Comprobar);
+            });
+
+            setTimeout(SiguientePregunta, 2000);
+        }
+
+        var opciones = document.querySelectorAll('.opciones');
+        opciones.forEach(function(opcion) {
+            opcion.addEventListener("click", Comprobar);
+        });
+
+
+        function ocultarTodasLasPreguntas() {
+            for (var i = 1; i <= 8; i++) {
+                var pregunta = document.getElementById("pregunta" + i);
+                pregunta.style.display = "none";
+            }
+        }
+
+        function Pregunta1(){
+            pregunta1.style.display = "block";
+        }
+
+        function Pregunta2(){
+            pregunta2.style.display = "block";
+        }
+        function Pregunta3(){
+            pregunta3.style.display = "block";
+        }
+        function Pregunta4(){
+            pregunta4.style.display = "block";
+        }
+        function Pregunta5(){
+            pregunta5.style.display = "block";
+        }
+        function Pregunta6(){
+            pregunta6.style.display = "block";
+        }
+        function Pregunta7(){
+            pregunta7.style.display = "block";
+        }
+        function Pregunta8(){
+            pregunta8.style.display = "block";
+        }
+
+        function salir(){
+            click.play();
+            var Opcion = 5;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+    </script>
+</body>
+</html>

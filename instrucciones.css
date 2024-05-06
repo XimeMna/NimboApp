@@ -1,0 +1,339 @@
+*{
+    cursor: url('Imagenes/cursor.png'), auto;
+    
+  }
+   
+body{
+    background-color: #625BB2;
+    margin: 0;
+    padding: 0;
+    zoom: 75%;
+    font-family: "Fredoka", sans-serif;
+}
+
+@font-face {
+    font-family: 'Fredoka';
+    src: url('Font/Fredoka-Regular.ttf') format('truetype');
+}
+
+header{ 
+    width: 100%;
+    height: 8.5%;
+    position: absolute;
+    background-color: #2D2958;
+}
+
+.icon{
+    margin-top: 1.5vh;
+    width: 3.5em;
+    border-radius: 30%;
+    cursor: url('Imagenes/cursor-dedo.png'), auto !important;
+}
+
+.cont_cabecera{
+    width: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    /* alinea verticalmente */
+}
+.cont_cabecera label{
+    position: absolute;
+    color: #fff;
+    font-size: 30px;
+    font-family: "Fredoka", sans-serif;
+    top: 25%;
+    margin-left: 1vh;
+}
+.instrucciones{
+    position: absolute;
+    right: 3%;
+    top: 15%;
+    width: 8vh;
+    height: 8vh;
+    background-color: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 5px 5px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 5px 5px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 5px 5px rgba(0,0,0,0.2);
+    cursor: url('Imagenes/cursor-dedo.png'), auto !important;
+   
+  }
+.instrucciones img{
+  width: 80%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  cursor: url('Imagenes/cursor-dedo.png'), auto !important;
+}
+
+.contenedor{
+    width: 85%;
+    height: 80%;
+    position: absolute;
+    background-color: #2D2958;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%,-50%);
+    border-radius: 25px;
+    opacity: 0.9;
+    -webkit-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+}
+
+.salir{
+    position: absolute;
+    z-index: 1;
+    width: 10vh;
+    top: 8em;
+    left: 7em;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+#principal{
+    width: 100%;
+    height: 100%;
+}
+#iniciocartas{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.img_inicio{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 15%;
+    border-radius: 25px;
+    width: 120vh;
+    -webkit-box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1); 
+    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1); 
+
+    
+}
+.titulo{
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    left: 50%;
+    transform: translate(-50%); 
+    top: 5%;
+}
+.titulo2{
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    left: 50%;
+    transform: translate(-50%); 
+    top: 58%;
+}
+
+.iniciocartas{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.laptop{
+    position: absolute;
+    width: 33%;
+    height: 25%;
+    left: 12%;
+    bottom: 8%;
+    text-align: center;
+}
+.laptop label{
+    font-size: 30px;
+    color: #fff;
+}
+.laptop img{
+    position: absolute;
+    top: 35%;
+    width: 15vh;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+
+}
+
+.tablet{
+    position: absolute;
+    width: 33%;
+    height: 25%;
+    right: 12%;
+    bottom: 8%;
+    text-align: center;
+}
+.tablet label{
+    font-size: 30px;
+    color: #fff;
+}
+.tablet img{
+    position: absolute;
+    top: 35%;
+    width: 15vh;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 20px;
+}
+
+.siguiente,.entendido{
+    position: absolute;
+    width: 30vh;
+    height: 8vh;
+    border-radius: 10px;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%);
+    color: #fff;
+    font-size: 35px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+    background-color: #0080ff;
+    border: 5px solid #0080ff;
+    -webkit-box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1); 
+    -moz-box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1); 
+    box-shadow: 10px 10px 20px rgba(255, 255, 255, 0.1); 
+
+}
+b{
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.animacion {
+    transition: opacity 0.5s ease;
+}
+
+.entendido{
+    bottom: 5%;
+}
+h1{
+    position: absolute;
+    color: #fff;
+}
+
+.img_nTarjetas{
+    position: absolute;
+    width: 18vh;
+    border-radius: 20px;
+    left: 18%;
+    top: 2%;
+}
+.flecha1{
+    width: 15vh;
+    position: absolute;
+    left: 38%;
+    transform: translate(-50%);
+    top: 2%;
+}
+.uno{
+    left: 48%;
+    top: 4%;
+}
+
+.img_jugar{
+    position: absolute;
+    width: 18vh;
+    border-radius: 20px;
+    left: 18%;
+    top: 22%;
+}
+.flecha2{
+    width: 15vh;
+    position: absolute;
+    left: 38%;
+    transform: translate(-50%);
+    top: 22%;
+}
+.dos{
+    left: 48%;
+    top: 24%;
+}
+.img_aprender{
+    position: absolute;
+    width: 18vh;
+    border-radius: 20px;
+    left: 18%;
+    top: 43%;
+}
+.flecha3{
+    width: 15vh;
+    position: absolute;
+    left: 38%;
+    transform: translate(-50%);
+    top: 43%;
+}
+.tres{
+    left: 48%;
+    top: 45%;
+}
+
+.img_dificultad{
+    position: absolute;
+    width: 18vh;
+    border-radius: 20px;
+    left: 18%;
+    top: 63%;
+}
+.flecha4{
+    width: 15vh;
+    position: absolute;
+    left: 38%;
+    transform: translate(-50%);
+    top: 63%;
+}
+.cuatro{
+    left: 48%;
+    top: 65%;
+}
+
+.dificil, .media, .facil{
+    width: 13vh;
+    position: absolute;
+    border-radius: 20px;
+}
+.dificil{
+    top: 60%;
+    left: 60%;
+}
+.d{
+    position: absolute;
+    color: #fff;
+    top: 72%;
+    left: 61%;
+    font-weight: normal;
+}
+.media{
+    top: 60%;
+    left: 70%;
+}
+.m{
+    position: absolute;
+    color: #fff;
+    top: 72%;
+    left: 71%;
+    font-weight: normal;
+}
+.facil{
+    top: 60%; 
+    left: 80%;
+}
+.f{
+    position: absolute;
+    color: #fff;
+    top: 72%;
+    left: 81%;
+    font-weight: normal;
+}
+

@@ -1,0 +1,191 @@
+*{
+    cursor: url('Imagenes/cursor.png'), auto;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Fredoka", sans-serif;
+    background-color: #2D2958;
+
+}
+
+@font-face {
+    font-family: 'Fredoka';
+    src: url('Font/Fredoka-Regular.ttf') format('truetype');
+}
+
+.contenedor{
+    background-color: #625BB2;
+    position: absolute;
+    width: 95%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+    -webkit-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    -moz-box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+    box-shadow: inset 1px 1px 5px 9px rgba(0,0,0,0.2);
+}
+
+.salir{
+    position: absolute;
+    z-index: 1;
+    width: 7vh;
+    top: 1em;
+    left: 1em;
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.Cuadro{
+    /* poner los cuadros iguales y solo cambiar el color */
+    position: absolute;
+    width: 45vh;
+    height: 45vh; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-75%);
+    border-radius: 30px;
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);  
+}
+
+.imagenes{
+    width: 20vh;
+    position: absolute;
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label{
+    position: absolute;
+    font-size: 35px;
+    color: #fff;
+    font-family: "Fredoka", sans-serif;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.juego_preguntas{
+    position: absolute;
+    width: 12vh; 
+    height: 12vh;
+    background-color: #FE7A36;
+    right: 25%;
+    top: 30%;
+    border-radius: 20px;
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+}
+.juego_preguntas img{
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.contenedor_botones{
+    position: absolute;
+    width: 98vh;
+    height: 18vh;
+    /* background-color: #FE7A36;   */
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 10%;
+    display: flex;
+    justify-content: space-between; 
+}
+
+.botones{
+    background-color: #fff;
+    width: 20%; 
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    -webkit-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    -moz-box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+    box-shadow: 20px 20px 20px -10px rgba(54,54,54,0.79);
+}
+
+.botones:nth-child(2){
+    background-color: #FFC500;
+}
+.botones:nth-child(2) img{
+    cursor: url('Imagenes/cursor-dedo.png'), auto;
+}
+
+.ver_cartas{
+    position: absolute;
+    width: 60%;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.letras_b{
+    margin-top: 10px;
+    margin-bottom: 3px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.numero_tarjetas{
+    position: absolute;
+    width: 10vh;
+    height: 8vh;
+    background-color: #2D2958;
+    left: 0;
+    right: 0;
+    bottom: 16%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+
+.d_facil, .d_media, .d_dificil{
+    position: absolute;
+    width: 12vh;
+    height: 11vh;
+    border-radius: 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; 
+}
+
+.d_facil{
+    background-color: #60d88b;
+}
+.d_media{
+    background-color: #ffd348;
+}
+.d_dificil{
+    background-color: #ff4a4a;
+}
+
+
+.dificultad_img{
+    position: absolute;
+    width: 75%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+}
+ 

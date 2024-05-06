@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <style>
+        .atras img{
+            top: 15%;
+        }
+    </style>
+
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Enlace iónico</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/001-metano.png">
+                    <h1>Ocurre cuando los átomos transfieren electrones entre sí para formar iones cargados que se atraen mutuamente, creando una unión fuerte entre ellos.</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Enlace covalente</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/002-quimico.png">
+                    <h1>Se forma cuando los átomos comparten pares de electrones para completar sus niveles de energía externos y lograr estabilidad, creando una unión fuerte entre ellos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Enlace metálico</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/003-quimico-1.png">
+                    <h1>Se produce entre los átomos de metales, donde los electrones de valencia se mueven libremente entre los átomos formando una "nube" de electrones.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Alta energía de enlace</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/004-molecula.png">
+                    <h1>Debido a la atracción electrostática entre iones de carga opuesta, los enlaces iónicos suelen tener una alta energía de enlace.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Compartición de electrones</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/005-molecular.png">
+                    <h1>Los átomos comparten pares de electrones para formar enlaces covalentes, lo que les permite completar sus niveles de energía externos y lograr estabilidad.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Conductividad eléctrica</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/006-tetrafluoruro-de-carbono.png">
+                    <h1>Debido a la movilidad de los electrones de valencia en los metales, los enlaces metálicos son buenos conductores de electricidad.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Cloruro de sodio</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/007-metileno.png">
+                    <h1>Compuesto formado por la unión de iones de sodio (Na⁺) y cloruro (Cl⁻) mediante un enlace iónico.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Molécula de agua</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/008-estructura.png">
+                    <h1>Formada por la unión de dos átomos de hidrógeno y un átomo de oxígeno mediante enlaces covalentes.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta9" style="display: none;">
+            <div class="cartas" id="cartas9"> 
+                <div class="adelante">
+                    <h1>Cobre</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Enlaces/009-acido-salicilico.png">
+                    <h1>El cobre es un metal que forma una red cristalina en la que los electrones de valencia se mueven libremente entre los átomos de cobre, creando un enlace metálico.</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 8;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        }  
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 9;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

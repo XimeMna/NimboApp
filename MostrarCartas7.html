@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <style>
+        .atras img{
+            top: 20%;
+        }
+    </style>
+    
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;html&gt;</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/001-html-3.png">
+                    <h1>Define el comienzo de un documento HTML y contiene todo el contenido de la página web.</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;head&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/002-html.png">
+                    <h1>Contiene metadatos y enlaces a recursos externos como hojas de estilo CSS y archivos JavaScript, así como el título de la página.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;body&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/003-html-1.png">
+                    <h1>Contiene todo el contenido visible de la página web, incluyendo texto, imágenes, enlaces, formularios y otros elementos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;p&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/004-carpeta.png">
+                    <h1>Define un párrafo de texto en HTML, que se muestra como un bloque de texto separado de otros elementos en la página.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;a&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/005-html-2.png">
+                    <h1>Define un hipervínculo en HTML, que permite enlazar a otras páginas web, ubicaciones dentro del mismo documento, etc.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;img&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/006-motor-de-busqueda-web.png">
+                    <h1>Define una imagen en HTML, especificando la ruta de la imagen mediante el atributo src y proporcionando un texto mediante el atributo alt.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;div&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/007-navegador.png">
+                    <h1>Define un contenedor, que se utiliza para agrupar y estructurar otros elementos en bloques separados.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;h1&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/008-navegador-1.png">
+                    <h1> Define encabezados de diferentes niveles en HTML, que se utilizan para estructurar y jerarquizar el contenido de la página.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta9" style="display: none;">
+            <div class="cartas" id="cartas9"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;ul&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/009-aplicaciones.png">
+                    <h1>Define una lista desordenada en HTML, que se muestra con viñetas o puntos y se utiliza para enumerar elementos sin un orden específico.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta10" style="display: none;">
+            <div class="cartas" id="cartas10"> 
+                <div class="adelante">
+                    <h1>Etiqueta: &lt;ol&gt;</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Html/010-navegadores.png">
+                    <h1>Define una lista ordenada en HTML, que se muestra con números o letras y se utiliza para enumerar elementos en un orden específico.</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 7;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 10;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

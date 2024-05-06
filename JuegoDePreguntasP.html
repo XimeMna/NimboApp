@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="JuegoDePreguntas.css">
+</head> 
+<body>
+    <img src="Imagenes/boton.png" class="salir" onclick="salir()">
+    <div class="contenedor">
+
+
+        <div id="pregunta1">
+        <div class="cuadro">
+            <h1></h1> 
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp;</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta2"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta3"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta4"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta5"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta6"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta7"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+
+        <div id="pregunta8"> 
+        <div class="cuadro">
+            <h1></h1>
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; </div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; </div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; </div>
+        </div>
+
+    </div>
+
+    <script>
+        var preguntas = [];
+        var numeroDePreguntas = #; 
+        for (var i = 1; i <= numeroDePreguntas; i++) {
+            preguntas.push(document.getElementById("pregunta" + i));
+        }
+        var pregunta = 0;
+        var Puntos = 0;
+
+        document.addEventListener("DOMContentLoaded", function() {
+            SiguientePregunta();
+            agregarEventos();
+        });
+
+        function SiguientePregunta(){
+            pregunta++;
+
+            ocultarTodasLasPreguntas();
+
+            switch(pregunta){
+                case 1:
+                    Pregunta1();
+                    break;
+                case 2:
+                    Pregunta2();
+                    break;
+                case 3:
+                    Pregunta3();
+                    break;
+                case 4:
+                    Pregunta4();
+                    break;
+                case 5:
+                    Pregunta5();
+                    break;
+                case 6:
+                    Pregunta6();
+                    break;
+                case 7:
+                    Pregunta7();
+                    break;
+                case 8:
+                    Pregunta8();
+                    break;
+                default:
+                    window.location.href = `FinalDeJuego.html?Puntos=${encodeURIComponent(Puntos)}`;
+                    break;
+            } 
+        }
+
+        function Comprobar(evento) {
+            var Seleccionado = this;
+            var opciones = Seleccionado.parentElement.querySelectorAll('.opciones');
+
+            opciones.forEach(function(opcion) {
+                if (opcion === Seleccionado) {
+                    if (opcion.classList.contains('correcta')) {
+                        Puntos++;
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#40a565";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("bien");
+                    } else {
+                        var CorrectaElement = opcion.parentElement.querySelector('.correcta');
+                        CorrectaElement.style.backgroundColor = "#40a565";
+                        CorrectaElement.style.color = "#fff";
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#ff4a4a";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("mal");
+                    }
+                }
+            });
+
+            opciones.forEach(function(opcion) {
+                opcion.removeEventListener("click", Comprobar);
+            });
+
+            setTimeout(SiguientePregunta, 2000);
+        }
+
+        var opciones = document.querySelectorAll('.opciones');
+        opciones.forEach(function(opcion) {
+            opcion.addEventListener("click", Comprobar);
+        });
+
+
+        function ocultarTodasLasPreguntas() {
+            for (var i = 1; i <= #; i++) {
+                var pregunta = document.getElementById("pregunta" + i);
+                pregunta.style.display = "none";
+            }
+        }
+
+        function Pregunta1(){
+            pregunta1.style.display = "block";
+        }
+
+        function Pregunta2(){
+            pregunta2.style.display = "block";
+        }
+        function Pregunta3(){
+            pregunta3.style.display = "block";
+        }
+        function Pregunta4(){
+            pregunta4.style.display = "block";
+        }
+        function Pregunta5(){
+            pregunta5.style.display = "block";
+        }
+        function Pregunta6(){
+            pregunta6.style.display = "block";
+        }
+        function Pregunta7(){
+            pregunta7.style.display = "block";
+        }
+        function Pregunta8(){
+            pregunta8.style.display = "block";
+        }
+
+        function salir(){
+            var Opcion = #;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+    </script>
+</body>
+</html>

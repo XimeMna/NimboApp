@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <style>
+        .adelante h1{
+            font-size: 40px;
+        }
+        .atras h1{
+            font-size: 40px;
+            bottom: 20%;
+        }
+        .atras img{
+            top: 30%;
+        }
+        .audio{
+            position: absolute;
+            width: 8vh;
+            height: 8vh;
+            bottom: 5%;
+            right: 5%;
+        }
+        .audio img{
+            width: 90%;
+            cursor: url('Imagenes/cursor-dedo.png'), auto;
+        }
+    </style>
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Book</h1> 
+                    <div class="audio">
+                        <audio id="audio1" src="Audio/book.mp3"></audio>
+                        <img id="altavoz1" src="Imagenes/altavoz.png">
+                    </div>                       
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/001-libros.png">
+                    <h1>Libro</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;"> 
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Chair</h1>
+                    <div class="audio">
+                        <audio id="audio2" src="Audio/chair.mp3"></audio>
+                        <img id="altavoz2" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/002-silla.png">
+                    <h1>Silla</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Car</h1>
+                    <div class="audio">
+                        <audio id="audio3" src="Audio/car.mp3"></audio>
+                        <img id="altavoz3" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/003-coche.png">
+                    <h1>Coche</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Computer</h1>
+                    <div class="audio">
+                        <audio id="audio4" src="Audio/computer.mp3"></audio>
+                        <img id="altavoz4" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/004-pantalla-del-ordenador.png">
+                    <h1>Computadora</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Phone</h1>
+                    <div class="audio">
+                        <audio id="audio5" src="Audio/phone.mp3"></audio>
+                        <img id="altavoz5" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/005-telefono-movil.png">
+                    <h1>Teléfono</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Table</h1>
+                    <div class="audio">
+                        <audio id="audio6" src="Audio/table.mp3"></audio>
+                        <img id="altavoz6" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/006-mesa.png">
+                    <h1>Mesa</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Bicycle</h1>
+                    <div class="audio">
+                        <audio id="audio7" src="Audio/bicycle.mp3"></audio>
+                        <img id="altavoz7" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/007-bicicleta.png">
+                    <h1>Bicicleta</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Microwave</h1>
+                    <div class="audio">
+                        <audio id="audio8" src="Audio/microwave.mp3"></audio>
+                        <img id="altavoz8" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/008-microondas.png">
+                    <h1>Microondas</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta9" style="display: none;">
+            <div class="cartas" id="cartas9"> 
+                <div class="adelante">
+                    <h1>Vacuum cleaner</h1>
+                    <div class="audio">
+                        <audio id="audio9" src="Audio/Vacuumcleaner.mp3"></audio>
+                        <img id="altavoz9" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/009-aspiradora.png">
+                    <h1>Aspiradora</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta10" style="display: none;">
+            <div class="cartas" id="cartas10"> 
+                <div class="adelante">
+                    <h1>3D Printer</h1>
+                    <div class="audio">
+                        <audio id="audio10" src="Audio/3DPrinter.mp3"></audio>
+                        <img id="altavoz10" src="Imagenes/altavoz.png">
+                    </div>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/Objetos/010-impresion-3d.png">
+                    <h1>Impresora 3D</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        document.getElementById("altavoz1").addEventListener("click", function() {
+            var audio = document.getElementById("audio1");
+            audio.play();
+        });
+        document.getElementById("altavoz2").addEventListener("click", function() {
+            var audio = document.getElementById("audio2");
+            audio.play();
+        });
+        document.getElementById("altavoz3").addEventListener("click", function() {
+            var audio = document.getElementById("audio3");
+            audio.play();
+        });
+        document.getElementById("altavoz4").addEventListener("click", function() {
+            var audio = document.getElementById("audio4");
+            audio.play();
+        });
+        document.getElementById("altavoz5").addEventListener("click", function() {
+            var audio = document.getElementById("audio5");
+            audio.play();
+        });
+        document.getElementById("altavoz6").addEventListener("click", function() {
+            var audio = document.getElementById("audio6");
+            audio.play();
+        });
+        document.getElementById("altavoz7").addEventListener("click", function() {
+            var audio = document.getElementById("audio7");
+            audio.play();
+        });
+        document.getElementById("altavoz8").addEventListener("click", function() {
+            var audio = document.getElementById("audio8");
+            audio.play();
+        });
+        document.getElementById("altavoz9").addEventListener("click", function() {
+            var audio = document.getElementById("audio9");
+            audio.play();
+        });
+        document.getElementById("altavoz10").addEventListener("click", function() {
+            var audio = document.getElementById("audio10");
+            audio.play();
+        });
+
+
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 2;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 10;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

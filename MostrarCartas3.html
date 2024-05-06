@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="MostrarCartas1.css">
+</head>
+<body>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <style>
+        .adelante h1{
+            font-size: 30px;
+        }
+        .atras h1{
+            font-size: 22px;
+        }
+        .atras img{
+            top: 20%;
+        }
+    </style>
+
+    <a><img src="Imagenes/boton.png" class="salir" onclick="salir()"></a>
+    <div class="contenedor">
+        <div class="numero">
+            <p id="numero_tarjeta">1</p>
+        </div>
+
+
+
+        <div class="tarjetas" id="carta1" style="display: block;">
+            <div class="cartas" id="cartas1"> 
+                <div class="adelante">
+                    <h1>Concepto de POO</h1>    
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/001-desarrollo-web.png">
+                    <h1>Paradigma de programación que organiza el software alrededor de objetos y datos, en lugar de acciones y lógica.</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tarjetas" id="carta2" style="display: none;">
+            <div class="cartas" id="cartas2"> 
+                <div class="adelante">
+                    <h1>Clase</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/002-clave.png">
+                    <h1>Plantilla para crear objetos que define propiedades y métodos comunes a todos los objetos de ese tipo.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta3" style="display: none;">
+            <div class="cartas" id="cartas3"> 
+                <div class="adelante">
+                    <h1>Objeto</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/003-diagrama-de-flujo.png">
+                    <h1>Instancia concreta de una clase que tiene atributos y métodos específicos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta4" style="display: none;">
+            <div class="cartas" id="cartas4"> 
+                <div class="adelante">
+                    <h1>Encapsulación</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/004-programacion-3d.png">
+                    <h1>Principio que consiste en ocultar el estado interno de un objeto y permitir el acceso solo a través de métodos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta5" style="display: none;">
+            <div class="cartas" id="cartas5"> 
+                <div class="adelante">
+                    <h1>Herencia</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/005-programacion.png">
+                    <h1>Mecanismo que permite que una clase herede atributos y métodos de otra clase, formando una jerarquía.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta6" style="display: none;">
+            <div class="cartas" id="cartas6"> 
+                <div class="adelante">
+                    <h1>Polimorfismo</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/006-programacion-1.png">
+                    <h1>Capacidad de objetos de diferentes clases de responder al mismo mensaje con comportamientos específicos.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta7" style="display: none;">
+            <div class="cartas" id="cartas7"> 
+                <div class="adelante">
+                    <h1>Abstracción</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/007-programacion-2.png">
+                    <h1>Proceso de identificar las características esenciales de un objeto y eliminar los detalles irrelevantes.</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="tarjetas" id="carta8" style="display: none;">
+            <div class="cartas" id="cartas8"> 
+                <div class="adelante">
+                    <h1>Método constructor</h1>
+                </div>
+                <div class="atras">
+                    <img src="Imagenes/POO/008-navegador.png">
+                    <h1>Método especial de una clase que se llama automáticamente al crear un nuevo objeto y se utiliza para inicializar sus atributos.</h1>
+                </div>
+            </div>
+        </div>
+        
+
+
+        <div class="boton_girar" onclick="girar()">
+            <h1>Girar</h1>
+        </div>
+        
+    </div>
+    <div class="retroceder" onclick="retroceder()">
+        <img src="Imagenes/angulo-izquierdo.png" class="flechas">
+    </div>
+    <div class="avanzar" onclick="avanzar()">
+        <img src="Imagenes/angulo-derecho.png" class="flechas">
+    </div>
+    
+
+
+    <script>
+        var click = document.getElementById("click");
+        var cartaVolteada = false;
+
+        function girar() {
+            click.play();
+            var cartaActual = document.querySelector('.tarjetas[style="display: block;"] .cartas');
+            
+            cartaVolteada = !cartaVolteada;
+            
+            if (cartaVolteada) {
+                cartaActual.style.transform = "rotateY(180deg)";
+            } else {
+                cartaActual.style.transform = "rotateY(0deg)";
+            }
+        }
+
+
+        function salir(){
+            click.play();
+            var Opcion = 3;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+
+        var preguntaActual = 1; 
+        
+        function retroceder() {
+            if (preguntaActual > 1) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual--; 
+                var preguntaAnteriorElement = document.getElementById("carta" + preguntaActual);
+                preguntaAnteriorElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function avanzar() {
+            var totalPreguntas = 8;
+            if (preguntaActual < totalPreguntas) {
+                var preguntaActualElement = document.getElementById("carta" + preguntaActual);
+                preguntaActualElement.style.display = "none"; 
+                preguntaActual++; 
+                var preguntaSiguienteElement = document.getElementById("carta" + preguntaActual);
+                preguntaSiguienteElement.style.display = "block"; 
+                actualizarNumeroPregunta();
+            }
+        }
+
+        function actualizarNumeroPregunta() {
+            var numeroPreguntaElement = document.getElementById("numero_tarjeta");
+            numeroPreguntaElement.textContent = preguntaActual; 
+        }
+
+    </script>
+</body> 
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nimbo</title>
+    <link rel="stylesheet" href="JuegoDePreguntas.css">
+</head> 
+<body>
+    <audio id="correcto" src="Audio/correcto.mp3"></audio>
+    <audio id="incorrecto" src="Audio/incorrecto.mp3"></audio>
+    <audio id="click" src="Audio/click.mp3"></audio>
+    <img src="Imagenes/boton.png" class="salir" onclick="salir()">
+    <div class="contenedor">
+
+
+        <div id="pregunta1">
+        <div class="cuadro">
+            <h1>¿Qué estudia la microbiología?</h1>
+            <img src="Imagenes/Microbiologia/001-microbiologia.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Los mamíferos marinos.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Los microorganismos.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Las montañas rocosas.</div>
+        </div>
+
+
+        <div id="pregunta2"> 
+        <div class="cuadro">
+            <h1>¿Qué tipo de organismo es una bacteria?</h1>
+            <img src="Imagenes/Microbiologia/002-microbiologia-1.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Eucariota.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Procariota.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Acelular.</div>
+        </div>
+
+
+        <div id="pregunta3"> 
+        <div class="cuadro">
+            <h1>¿Qué tipo de organismo es un virus?</h1>
+            <img src="Imagenes/Microbiologia/003-ogm.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Eucariota.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Eucariota.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Acelular.</div>
+        </div>
+
+
+        <div id="pregunta4"> 
+        <div class="cuadro">
+            <h1>¿Cuál de los siguientes es un ejemplo de hongo?</h1>
+            <img src="Imagenes/Microbiologia/004-microbio.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Escherichia coli.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Candida albicans.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Plasmodium falciparum.</div>
+        </div>
+
+
+        <div id="pregunta5"> 
+        <div class="cuadro">
+            <h1>¿Qué tipo de organismo es un protozoo?</h1>
+            <img src="Imagenes/Microbiologia/005-prueba-microbiologica.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Bacteria.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Virus.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Eucariota unicelular.</div>
+        </div>
+
+
+        <div id="pregunta6"> 
+        <div class="cuadro">
+            <h1>¿Qué técnica se utiliza para distinguir entre bacterias Gram-positivas y Gram-negativas?</h1>
+            <img src="Imagenes/Microbiologia/006-proteccion.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; PCR.</div>
+        <div class="opciones correcta" id="opc2">b&#41; &nbsp;&nbsp; Tinción de Gram.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Western blot.</div>
+        </div>
+
+
+        <div id="pregunta7"> 
+        <div class="cuadro">
+            <h1>¿Cuál de los siguientes es un patógeno comúnmente asociado con infecciones del tracto urinario?</h1>
+            <img src="Imagenes/Microbiologia/007-ameba.png">
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Escherichia coli.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Mycobacterium tuberculosis.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Vibrio cholerae.</div>
+        </div>
+
+
+        <div id="pregunta8"> 
+        <div class="cuadro">
+            <h1>¿Qué enfermedad es causada por la bacteria Mycobacterium tuberculosis?</h1>
+            <img src="Imagenes/Microbiologia/008-arn.png">
+        </div>
+        <div class="opciones correcta" id="opc1">a&#41; &nbsp;&nbsp; Tuberculosis.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Sarampión.</div>
+        <div class="opciones incorrecta" id="opc3">c&#41; &nbsp;&nbsp; Gripe.</div>
+        </div>
+
+        <div id="pregunta9"> 
+        <div class="cuadro">
+            <h1>¿Cuál de los siguientes es el primer antibiótico descubierto?</h1>
+            <img src="Imagenes/Microbiologia/009-leucocito.png">
+        </div>
+        <div class="opciones incorrecta" id="opc1">a&#41; &nbsp;&nbsp; Amoxicilina.</div>
+        <div class="opciones incorrecta" id="opc2">b&#41; &nbsp;&nbsp; Tetraciclina.</div>
+        <div class="opciones correcta" id="opc3">c&#41; &nbsp;&nbsp; Penicilina.</div>
+        </div>
+
+    </div>
+
+    <script>
+        var preguntas = [];
+        var numeroDePreguntas = 9; 
+        for (var i = 1; i <= numeroDePreguntas; i++) {
+            preguntas.push(document.getElementById("pregunta" + i));
+        }
+        var pregunta = 0;
+        var Puntos = 0;
+        var audioCorrecto = document.getElementById("correcto");
+        var audioIncorrecto = document.getElementById("incorrecto");
+        var click = document.getElementById("click");
+
+        document.addEventListener("DOMContentLoaded", function() {
+            SiguientePregunta();
+            agregarEventos();
+        });
+
+        function SiguientePregunta(){
+            pregunta++;
+
+            ocultarTodasLasPreguntas();
+
+            switch(pregunta){
+                case 1:
+                    Pregunta1();
+                    break;
+                case 2:
+                    Pregunta2();
+                    break;
+                case 3:
+                    Pregunta3();
+                    break;
+                case 4:
+                    Pregunta4();
+                    break;
+                case 5:
+                    Pregunta5();
+                    break;
+                case 6:
+                    Pregunta6();
+                    break;
+                case 7:
+                    Pregunta7();
+                    break;
+                case 8:
+                    Pregunta8();
+                    break;
+                case 9:
+                    Pregunta9();
+                    break;
+                default:
+                    window.location.href = `FinalDeJuego6.html?Puntos=${encodeURIComponent(Puntos)}`;
+                    break;
+            } 
+        }
+
+        function Comprobar(evento) {
+            var Seleccionado = this;
+            var opciones = Seleccionado.parentElement.querySelectorAll('.opciones');
+
+            opciones.forEach(function(opcion) {
+                if (opcion === Seleccionado) {
+                    if (opcion.classList.contains('correcta')) {
+                        Puntos++;
+                        audioCorrecto.play();
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#40a565";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("bien");
+                    } else {
+                        audioIncorrecto.play();
+                        var CorrectaElement = opcion.parentElement.querySelector('.correcta');
+                        CorrectaElement.style.backgroundColor = "#40a565";
+                        CorrectaElement.style.color = "#fff";
+                        opcion.style.transform = "scale(1)";
+                        opcion.style.backgroundColor = "#ff4a4a";
+                        opcion.style.color = "#fff";
+                        opcion.classList.add("mal");
+                    }
+                }
+            });
+
+            opciones.forEach(function(opcion) {
+                opcion.removeEventListener("click", Comprobar);
+            });
+
+            setTimeout(SiguientePregunta, 2000);
+        }
+
+        var opciones = document.querySelectorAll('.opciones');
+        opciones.forEach(function(opcion) {
+            opcion.addEventListener("click", Comprobar);
+        });
+
+
+        function ocultarTodasLasPreguntas() {
+            for (var i = 1; i <= 9; i++) {
+                var pregunta = document.getElementById("pregunta" + i);
+                pregunta.style.display = "none";
+            }
+        }
+
+        function Pregunta1(){
+            pregunta1.style.display = "block";
+        }
+
+        function Pregunta2(){
+            pregunta2.style.display = "block";
+        }
+        function Pregunta3(){
+            pregunta3.style.display = "block";
+        }
+        function Pregunta4(){
+            pregunta4.style.display = "block";
+        }
+        function Pregunta5(){
+            pregunta5.style.display = "block";
+        }
+        function Pregunta6(){
+            pregunta6.style.display = "block";
+        }
+        function Pregunta7(){
+            pregunta7.style.display = "block";
+        }
+        function Pregunta8(){
+            pregunta8.style.display = "block";
+        }
+        function Pregunta9(){
+            pregunta9.style.display = "block";
+        }
+
+        function salir(){
+            click.play();
+            var Opcion = 6;
+            window.location.href = `InicioDeCartas.html?Opcion=${encodeURIComponent(Opcion)}`;
+        } 
+    </script>
+</body>
+</html>
